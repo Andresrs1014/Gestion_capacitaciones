@@ -1,0 +1,36 @@
+# Node modules
+node_modules/
+# Build output
+dist/
+build/
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# dotenv environment variables
+.env
+.env.*
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg-info/
+.eggs/
+# Virtual environments
+venv/
+ENV/
+.env/
+.venv/
+# Alembic
+backend/alembic/versions/
+# VS Code
+.vscode/
+# OS
+.DS_Store
+Thumbs.db
+# Others
+*.sqlite3
+*.log
