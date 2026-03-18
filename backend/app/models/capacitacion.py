@@ -11,7 +11,7 @@ class Capacitacion(Base):
     
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     nombre_capacitador = Column(String(100), nullable=False)
-    area_capacitadora = Column(String(150), nullable=False)
+    area_capacitadora_id = Column(Integer, ForeignKey("areas.id"), nullable=False)  # ← FK ahora
     fecha_carga = Column(DateTime(timezone=True), server_default=func.now())
     tema = Column(String(255), nullable=False)
     descripcion = Column(Text, nullable=True)
@@ -22,6 +22,7 @@ class Capacitacion(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
     
+    area_capacitadora = relationship("Area", foreign_keys=[area_capacitadora_id])  # ← relación
     areas = relationship("CapacitacionArea", back_populates="capacitacion")
     
 class CapacitacionArea(Base):

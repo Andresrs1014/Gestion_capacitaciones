@@ -17,8 +17,8 @@ def subir_archivo(file_bytes: bytes, filename: str, folder: str = "capacitacione
         overwrite=False
     )
     return {
-        "url": resultado["secure_url"],
-        "nombre": filename,
-        "tipo": resultado["format"],
-        "tamanio_kb": resultado["bytes"] // 1024
-    }
+    "url": resultado["secure_url"],
+    "nombre": filename,
+    "tipo": resultado.get("format") or resultado.get("resource_type") or filename.split(".")[-1],
+    "tamanio": resultado.get("bytes", 0)
+}
