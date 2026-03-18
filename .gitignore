@@ -24,8 +24,7 @@ venv/
 ENV/
 .env/
 .venv/
-# Alembic
-backend/alembic/versions/
+
 # VS Code
 .vscode/
 # OS
