@@ -14,7 +14,8 @@ def subir_archivo(file_bytes: bytes, filename: str, folder: str = "capacitacione
         folder=folder,
         resource_type="auto",  # detecta pdf, pptx, mp4, etc.
         public_id=filename,
-        overwrite=False
+        overwrite=False,
+        access_mode="public"
     )
     return {
     "url": resultado["secure_url"],
